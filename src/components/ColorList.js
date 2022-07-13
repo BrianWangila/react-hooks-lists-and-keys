@@ -8,7 +8,7 @@ function ColorList() {
     "darkslategray",
     "hotpink",
   ];
-
+/*
   return (
     <div>
       <h1>Top 5 CSS Colors</h1>
@@ -21,6 +21,39 @@ function ColorList() {
       </ol>
     </div>
   );
+  */
+  
+  const colorElements = colors.map((color) => {
+    return <li style={{color: color}}>{color}</li>
+  })
+  return (
+    <div>
+      <h1>Top 5 CSS Colors</h1>
+      <ol>
+        {colorElements}
+      </ol>
+    </div>
+  )
 }
 
 export default ColorList;
+
+
+
+const users = [
+  {id: 1, firstName: "Brian", lastName: "Wanjala"},
+  {id: 2, firstName: "Judy", lastName: "Mukami"}
+]
+
+// using id for uniqueness
+const userHeadings = users.map((map) => {
+  return <h1 key={user.id}>{user.firstName}</h1>
+})
+
+
+//using index for uniqueness
+const fib = [0, 1, 3, 9, 6, 4]
+
+const fibList = fib.map((number, index) => {
+  return <div key={index}>{number}</div>
+})
